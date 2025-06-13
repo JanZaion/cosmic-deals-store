@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
+import Image from 'next/image';
 
 interface Product {
   id: string;
@@ -23,19 +24,19 @@ const products: Product[] = [
     id: '1',
     name: 'Použitý festivalový kelímek (vratný, výhodné)',
     price: '51 Kč',
-    image: '/placeholder-cup.jpg',
+    image: '/kelimek.png',
   },
   {
     id: '2',
     name: 'Kláda z filmu Final Destination 2 (vysoká sběratelská hodnota)',
     price: '84 000 Kč',
-    image: '/placeholder-log.jpg',
+    image: '/log.png',
   },
   {
     id: '3',
     name: 'Znalost přesného času vaší smrti (tolerance 2 hod.)',
     price: '2000 Kč',
-    image: '/placeholder-crystal.jpg',
+    image: '/goon.png',
   },
 ];
 
@@ -224,7 +225,13 @@ export default function Home() {
                   </div>
 
                   <div className="aspect-square bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl mb-6 flex items-center justify-center overflow-hidden border-4 border-white relative shadow-inner">
-                    <div className="text-6xl relative z-10">🎁</div>
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute top-2 left-2 text-white font-bold text-xs bg-black/70 px-2 py-1 rounded">
                       #{product.id}
                     </div>
@@ -245,7 +252,7 @@ export default function Home() {
                           : 'bg-white text-black border-black hover:bg-yellow-300 hover:scale-110'
                       }`}
                     >
-                      {selectedProduct === product.name ? '✓ VYBRÁNO!' : 'KOUPIT TEĎ!'}
+                      {selectedProduct === product.name ? '✓ VYBRÁNO!' : 'CHCI!'}
                     </div>
                   </div>
 
