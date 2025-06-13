@@ -160,24 +160,65 @@ export default function Home() {
                 ★
               </div>
             </div>
-            <h1 className="text-8xl font-black tracking-tight text-white sm:text-9xl lg:text-[12rem] font-sans transform -skew-x-6 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 via-pink-400 to-cyan-400 bg-clip-text text-transparent blur-sm scale-110 opacity-50">
-                COSMIC DEALS!
+            <div className="relative mb-8">
+              {/* Multiple glowing background layers for maximum drama */}
+              <div className="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-black transform -skew-x-6 blur-xl opacity-60">
+                <div className="text-yellow-300 animate-pulse">COSMIC DEALS!</div>
               </div>
-              <span className="block bg-gradient-to-r from-yellow-300 via-pink-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(255,255,255,1)] stroke-black stroke-2 relative z-10">
-                COSMIC
-              </span>
-              <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-7xl sm:text-8xl lg:text-[10rem] mt-2 drop-shadow-[0_0_40px_rgba(255,255,255,1)] stroke-black stroke-2 relative z-10">
-                DEALS!
-              </span>
-            </h1>
-            <div className="mt-8 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-full py-6 px-10 border-8 border-white shadow-2xl">
-              <p className="text-3xl font-black text-black drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]">
-                🌟 NEJLEVNĚJŠÍ CENY V GALAXII! 🌟
-              </p>
-              <p className="text-xl text-black mt-2 font-black animate-pulse">
-                ⚡ MEGA SLEVY • COSMIC VÝHODNÉ CENY • ZÁRUKA SPOKOJENOSTI! ⚡
-              </p>
+              <div className="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-black transform -skew-x-6 blur-lg opacity-40">
+                <div className="text-white">COSMIC DEALS!</div>
+              </div>
+
+              {/* Main heading with maximum contrast */}
+              <h1 className="text-8xl font-black tracking-tight sm:text-9xl lg:text-[12rem] font-sans transform -skew-x-6 relative z-20">
+                <span className="block text-white relative">
+                  {/* Multiple text shadows for 3D effect */}
+                  <span
+                    className="absolute inset-0 text-black"
+                    style={{
+                      textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 6px 6px 0 #000',
+                    }}
+                  >
+                    COSMIC
+                  </span>
+                  <span
+                    className="relative z-10 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent"
+                    style={{
+                      filter:
+                        'drop-shadow(0 0 20px rgba(255, 255, 0, 0.8)) drop-shadow(0 0 40px rgba(255, 255, 0, 0.6))',
+                    }}
+                  >
+                    COSMIC
+                  </span>
+                </span>
+
+                <span className="block text-white relative text-7xl sm:text-8xl lg:text-[10rem] mt-2">
+                  {/* Multiple text shadows for 3D effect */}
+                  <span
+                    className="absolute inset-0 text-black"
+                    style={{
+                      textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 6px 6px 0 #000',
+                    }}
+                  >
+                    DEALS!
+                  </span>
+                  <span
+                    className="relative z-10 bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                    style={{
+                      filter:
+                        'drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)) drop-shadow(0 0 40px rgba(0, 255, 255, 0.6))',
+                    }}
+                  >
+                    DEALS!
+                  </span>
+                </span>
+              </h1>
+
+              {/* Animated sparkle effects */}
+              <div className="absolute top-1/4 -left-8 text-4xl text-yellow-300 animate-spin">✨</div>
+              <div className="absolute top-1/3 -right-8 text-4xl text-cyan-300 animate-bounce">⚡</div>
+              <div className="absolute bottom-1/4 -left-12 text-3xl text-pink-300 animate-pulse">💥</div>
+              <div className="absolute bottom-1/3 -right-12 text-3xl text-yellow-300 animate-ping">🌟</div>
             </div>
             <div className="mt-6 flex justify-center space-x-4">
               <span className="animate-bounce text-3xl delay-0">🎉</span>
