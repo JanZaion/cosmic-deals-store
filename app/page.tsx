@@ -84,7 +84,7 @@ export default function Home() {
       }
     },
     onSuccess: () => {
-      alert('Objednávka byla úspěšně odeslána!');
+      alert('Vaše objednávka byla přijata... Artefakt byl získán...');
       setFormData({
         customerName: '',
         customerEmail: '',
@@ -95,7 +95,7 @@ export default function Home() {
       setSelectedProduct('');
     },
     onError: (error) => {
-      alert(`Chyba při odesílání objednávky: ${error.message}`);
+      alert(`Prastaré síly odmítají: ${error.message}`);
     },
   });
 
@@ -121,7 +121,7 @@ export default function Home() {
     const { customerName, customerEmail, product, caseSubject, caseDescription } = formData;
 
     if (!customerName || !customerEmail || !product || !caseSubject || !caseDescription) {
-      alert('Prosím vyplňte všechna povinná pole.');
+      alert('Rituál vyžaduje všechny potřebné součásti...');
       return;
     }
 
@@ -136,19 +136,49 @@ export default function Home() {
     formData.caseDescription;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 to-blue-600 relative overflow-hidden">
-      {/* Subtle Retro Grid Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,_theme(colors.cyan.400/60)_1px,_transparent_1px)] bg-[length:60px_60px]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,_theme(colors.magenta.400/60)_1px,_transparent_1px)] bg-[length:60px_60px]"></div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black relative overflow-hidden">
+      {/* Cosmic Horror Pattern Overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_theme(colors.purple.900/40)_0%,_transparent_50%)]"></div>
+        <div
+          className="absolute inset-0 bg-[conic-gradient(from_0deg,_theme(colors.emerald.900/20),_transparent_30%,_theme(colors.purple.900/20),_transparent_70%,_theme(colors.emerald.900/20))] animate-spin"
+          style={{ animationDuration: '60s' }}
+        ></div>
       </div>
 
-      {/* Floating Neon Stars */}
+      {/* Floating Cosmic Horror Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 text-yellow-300 text-2xl animate-bounce">★</div>
-        <div className="absolute top-1/3 right-1/3 text-pink-300 text-xl animate-pulse">✨</div>
-        <div className="absolute bottom-1/4 left-1/3 text-cyan-300 text-lg animate-bounce delay-1000">⭐</div>
-        <div className="absolute top-2/3 right-1/4 text-purple-300 text-xl animate-pulse delay-2000">💫</div>
+        <div className="absolute top-1/4 left-1/4 text-green-400 text-2xl animate-pulse opacity-60">👁️</div>
+        <div
+          className="absolute top-1/3 right-1/3 text-purple-400 text-xl animate-pulse opacity-40"
+          style={{ animationDelay: '2s' }}
+        >
+          🌙
+        </div>
+        <div
+          className="absolute bottom-1/4 left-1/3 text-emerald-400 text-lg animate-pulse opacity-50"
+          style={{ animationDelay: '4s' }}
+        >
+          🕳️
+        </div>
+        <div
+          className="absolute top-2/3 right-1/4 text-slate-400 text-xl animate-pulse opacity-30"
+          style={{ animationDelay: '6s' }}
+        >
+          💀
+        </div>
+        <div
+          className="absolute top-1/2 left-1/6 text-purple-500 text-sm animate-pulse opacity-20"
+          style={{ animationDelay: '1s' }}
+        >
+          🌌
+        </div>
+        <div
+          className="absolute bottom-1/3 right-1/6 text-green-500 text-sm animate-pulse opacity-25"
+          style={{ animationDelay: '3s' }}
+        >
+          ⚫
+        </div>
       </div>
 
       {/* Header */}
@@ -156,75 +186,93 @@ export default function Home() {
         <div className="px-6 py-16 sm:px-12 sm:py-24 lg:px-16">
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-6">
-              <div className="text-yellow-300 text-8xl mb-4 animate-bounce drop-shadow-[0_0_20px_rgba(253,224,71,0.8)]">
-                ★
+              <div
+                className="text-emerald-400 text-8xl mb-4 animate-pulse drop-shadow-[0_0_30px_rgba(16,185,129,0.6)]"
+                style={{ filter: 'drop-shadow(0 0 40px rgba(16,185,129,0.4))' }}
+              >
+                👁️
               </div>
             </div>
             <div className="relative mb-8">
-              {/* Multiple glowing background layers for maximum drama */}
-              <div className="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-black transform -skew-x-6 blur-xl opacity-60">
-                <div className="text-yellow-300 animate-pulse">COSMIC DEALS!</div>
+              {/* Multiple glowing background layers for eldritch effect */}
+              <div className="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-black transform blur-xl opacity-30">
+                <div className="text-emerald-400 animate-pulse">COSMIC DEALS</div>
               </div>
-              <div className="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-black transform -skew-x-6 blur-lg opacity-40">
-                <div className="text-white">COSMIC DEALS!</div>
+              <div className="absolute inset-0 text-8xl sm:text-9xl lg:text-[12rem] font-black transform blur-lg opacity-20">
+                <div className="text-purple-500">COSMIC DEALS</div>
               </div>
 
-              {/* Main heading with maximum contrast */}
-              <h1 className="text-8xl font-black tracking-tight sm:text-9xl lg:text-[12rem] font-sans transform -skew-x-6 relative z-20">
-                <span className="block text-white relative">
-                  {/* Multiple text shadows for 3D effect */}
+              {/* Main heading with cosmic horror styling */}
+              <h1 className="text-8xl font-black tracking-tight sm:text-9xl lg:text-[12rem] font-serif relative z-20">
+                <span className="block text-slate-200 relative">
+                  {/* Multiple text shadows for otherworldly effect */}
                   <span
                     className="absolute inset-0 text-black"
                     style={{
-                      textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 6px 6px 0 #000',
+                      textShadow: '2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 4px 4px 0 #000',
                     }}
                   >
                     COSMIC
                   </span>
                   <span
-                    className="relative z-10 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent"
+                    className="relative z-10 bg-gradient-to-r from-emerald-400 via-green-500 to-teal-400 bg-clip-text text-transparent"
                     style={{
                       filter:
-                        'drop-shadow(0 0 20px rgba(255, 255, 0, 0.8)) drop-shadow(0 0 40px rgba(255, 255, 0, 0.6))',
+                        'drop-shadow(0 0 30px rgba(16, 185, 129, 0.8)) drop-shadow(0 0 60px rgba(16, 185, 129, 0.4))',
                     }}
                   >
                     COSMIC
                   </span>
                 </span>
 
-                <span className="block text-white relative text-7xl sm:text-8xl lg:text-[10rem] mt-2">
-                  {/* Multiple text shadows for 3D effect */}
+                <span className="block text-slate-200 relative text-7xl sm:text-8xl lg:text-[10rem] mt-2">
+                  {/* Multiple text shadows for otherworldly effect */}
                   <span
                     className="absolute inset-0 text-black"
                     style={{
-                      textShadow: '3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 6px 6px 0 #000',
+                      textShadow: '2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 4px 4px 0 #000',
                     }}
                   >
-                    DEALS!
+                    DEALS
                   </span>
                   <span
-                    className="relative z-10 bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                    className="relative z-10 bg-gradient-to-r from-purple-400 via-violet-500 to-indigo-400 bg-clip-text text-transparent"
                     style={{
                       filter:
-                        'drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)) drop-shadow(0 0 40px rgba(0, 255, 255, 0.6))',
+                        'drop-shadow(0 0 30px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))',
                     }}
                   >
-                    DEALS!
+                    DEALS
                   </span>
                 </span>
               </h1>
 
-              {/* Animated sparkle effects */}
-              <div className="absolute top-1/4 -left-8 text-4xl text-yellow-300 animate-spin">✨</div>
-              <div className="absolute top-1/3 -right-8 text-4xl text-cyan-300 animate-bounce">⚡</div>
-              <div className="absolute bottom-1/4 -left-12 text-3xl text-pink-300 animate-pulse">💥</div>
-              <div className="absolute bottom-1/3 -right-12 text-3xl text-yellow-300 animate-ping">🌟</div>
+              {/* Animated eldritch effects */}
+              <div className="absolute top-1/4 -left-8 text-4xl text-emerald-400 animate-pulse opacity-60">🌊</div>
+              <div
+                className="absolute top-1/3 -right-8 text-4xl text-purple-400 animate-pulse opacity-50"
+                style={{ animationDelay: '1s' }}
+              >
+                ⚡
+              </div>
+              <div
+                className="absolute bottom-1/4 -left-12 text-3xl text-slate-400 animate-pulse opacity-40"
+                style={{ animationDelay: '2s' }}
+              >
+                🌀
+              </div>
+              <div
+                className="absolute bottom-1/3 -right-12 text-3xl text-green-400 animate-pulse opacity-50"
+                style={{ animationDelay: '3s' }}
+              >
+                💫
+              </div>
             </div>
             <div className="mt-6 flex justify-center space-x-4">
-              <span className="animate-bounce text-3xl delay-0">🎉</span>
-              <span className="animate-bounce text-3xl delay-200">🚀</span>
-              <span className="animate-bounce text-3xl delay-400">💎</span>
-              <span className="animate-bounce text-3xl delay-600">🎊</span>
+              <span className="animate-pulse text-3xl delay-0 opacity-70">🌒</span>
+              <span className="animate-pulse text-3xl delay-200 opacity-60">🔮</span>
+              <span className="animate-pulse text-3xl delay-400 opacity-80">⚫</span>
+              <span className="animate-pulse text-3xl delay-600 opacity-50">🌌</span>
             </div>
           </div>
         </div>
@@ -234,14 +282,14 @@ export default function Home() {
       <div className="px-6 py-16 sm:px-12 lg:px-16 relative">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <div className="text-6xl mb-4 animate-pulse">🛸</div>
-            <h2 className="text-5xl font-black text-white mb-6 font-sans transform -skew-x-3 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-              <span className="bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                EXKLUZIVNÍ NABÍDKA!
+            <div className="text-6xl mb-4 animate-pulse opacity-80">🛸</div>
+            <h2 className="text-5xl font-black text-slate-200 mb-6 font-serif drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
+              <span className="bg-gradient-to-r from-purple-400 to-emerald-400 bg-clip-text text-transparent">
+                ZAKAZANÉ ARTEFAKTY
               </span>
             </h2>
-            <div className="bg-gradient-to-r from-yellow-400 to-pink-400 text-black font-bold py-3 px-8 rounded-full inline-block text-xl animate-bounce border-4 border-white shadow-2xl">
-              🔥 LIMITOVANÁ EDICE • POUZE 3 KUSY! 🔥
+            <div className="bg-gradient-to-r from-emerald-900 to-purple-900 text-emerald-200 font-bold py-3 px-8 rounded-lg inline-block text-xl border border-emerald-400 shadow-2xl shadow-emerald-500/20">
+              🌙 PŮVOD NEZNÁMÝ • SÍLA NEZMĚŘITELNÁ 🌙
             </div>
           </div>
 
@@ -250,58 +298,74 @@ export default function Home() {
               <div
                 key={product.id}
                 onClick={() => handleProductSelect(product)}
-                className={`group relative cursor-pointer transform transition-all duration-300 hover:scale-105 hover:rotate-1 ${
+                className={`group relative cursor-pointer transform transition-all duration-500 hover:scale-105 ${
                   selectedProduct === product.name
-                    ? 'ring-4 ring-yellow-400 shadow-2xl shadow-pink-500/50 scale-105 rotate-1'
-                    : 'hover:shadow-2xl hover:shadow-cyan-500/50'
+                    ? 'ring-2 ring-emerald-400 shadow-2xl shadow-emerald-500/30 scale-105'
+                    : 'hover:shadow-2xl hover:shadow-purple-500/30'
                 }`}
               >
-                <div className="bg-gradient-to-br from-pink-500/90 to-purple-600/90 rounded-2xl p-6 h-full border-4 border-white backdrop-blur-sm relative overflow-hidden">
-                  {/* Subtle retro pattern overlay */}
-                  <div className="absolute inset-0 opacity-5 bg-[repeating-linear-gradient(45deg,_theme(colors.cyan.400)_0px,_theme(colors.cyan.400)_2px,_transparent_2px,_transparent_40px)]"></div>
+                <div className="bg-gradient-to-br from-slate-800/90 to-gray-900/90 rounded-xl p-6 h-full border border-slate-700 backdrop-blur-sm relative overflow-hidden">
+                  {/* Subtle cosmic pattern overlay */}
+                  <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,_theme(colors.emerald.400)_1px,_transparent_1px)] bg-[length:30px_30px]"></div>
 
-                  {/* Flashy badge */}
-                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-red-500 text-black font-black text-xs py-1 px-3 rounded-full border-2 border-white shadow-lg animate-pulse z-10">
-                    HOT!
+                  {/* Eldritch badge */}
+                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-800 to-emerald-800 text-emerald-200 font-bold text-xs py-1 px-3 rounded-full border border-emerald-400 shadow-lg animate-pulse z-10">
+                    CURSED
                   </div>
 
-                  <div className="aspect-square bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl mb-6 flex items-center justify-center overflow-hidden border-4 border-white relative shadow-inner">
+                  <div className="aspect-square bg-gradient-to-br from-slate-700 to-gray-800 rounded-lg mb-6 flex items-center justify-center overflow-hidden border border-slate-600 relative shadow-inner">
                     <Image
                       src={product.image}
                       alt={product.name}
                       width={300}
                       height={300}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover opacity-90"
                     />
-                    <div className="absolute top-2 left-2 text-white font-bold text-xs bg-black/70 px-2 py-1 rounded">
+                    <div className="absolute top-2 left-2 text-emerald-200 font-bold text-xs bg-black/80 px-2 py-1 rounded border border-emerald-400">
                       #{product.id}
                     </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
 
-                  <h3 className="text-lg font-black text-white mb-4 min-h-[3rem] leading-tight drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+                  <h3 className="text-lg font-bold text-slate-200 mb-4 min-h-[3rem] leading-tight drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
                     {product.name}
                   </h3>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-black text-yellow-300 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+                    <span className="text-2xl font-black text-emerald-400 drop-shadow-[0_0_10px_rgba(16,185,129,0.6)]">
                       {product.price}
                     </span>
                     <div
-                      className={`px-4 py-2 rounded-full text-sm font-black transition-all duration-300 border-2 ${
+                      className={`px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 border ${
                         selectedProduct === product.name
-                          ? 'bg-yellow-400 text-black border-white shadow-lg animate-pulse'
-                          : 'bg-white text-black border-black hover:bg-yellow-300 hover:scale-110'
+                          ? 'bg-emerald-800 text-emerald-200 border-emerald-400 shadow-lg shadow-emerald-500/30 animate-pulse'
+                          : 'bg-slate-700 text-slate-200 border-slate-500 hover:bg-emerald-900 hover:text-emerald-200 hover:border-emerald-400'
                       }`}
                     >
-                      {selectedProduct === product.name ? '✓ VYBRÁNO!' : 'CHCI!'}
+                      {selectedProduct === product.name ? '✓ VYBRÁNO' : 'VYBRAT'}
                     </div>
                   </div>
 
-                  {/* Flashy corner stars */}
-                  <div className="absolute top-3 left-3 text-yellow-300 text-lg animate-spin">✨</div>
-                  <div className="absolute top-3 right-3 text-cyan-300 text-lg animate-spin">⭐</div>
-                  <div className="absolute bottom-3 left-3 text-pink-300 text-lg animate-spin">💫</div>
-                  <div className="absolute bottom-3 right-3 text-yellow-300 text-lg animate-spin">🌟</div>
+                  {/* Eldritch corner elements */}
+                  <div className="absolute top-3 left-3 text-emerald-400 text-lg animate-pulse opacity-60">👁️</div>
+                  <div
+                    className="absolute top-3 right-3 text-purple-400 text-lg animate-pulse opacity-50"
+                    style={{ animationDelay: '1s' }}
+                  >
+                    🌙
+                  </div>
+                  <div
+                    className="absolute bottom-3 left-3 text-slate-400 text-lg animate-pulse opacity-40"
+                    style={{ animationDelay: '2s' }}
+                  >
+                    ⚫
+                  </div>
+                  <div
+                    className="absolute bottom-3 right-3 text-emerald-400 text-lg animate-pulse opacity-60"
+                    style={{ animationDelay: '3s' }}
+                  >
+                    🌌
+                  </div>
                 </div>
               </div>
             ))}
@@ -310,91 +374,81 @@ export default function Home() {
       </div>
 
       {/* Form */}
-      <div className="px-6 py-16 sm:px-12 lg:px-16 bg-gradient-to-b from-purple-600/15 to-pink-600/15 relative">
+      <div className="px-6 py-16 sm:px-12 lg:px-16 bg-gradient-to-b from-black/30 to-slate-900/30 relative">
         <div className="mx-auto max-w-2xl relative">
           <div className="text-center mb-12">
-            <div className="text-6xl mb-4 animate-bounce">🛍️</div>
-            <h2 className="text-5xl font-black text-white mb-6 font-sans transform -skew-x-3 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-              <span className="bg-gradient-to-r from-yellow-300 to-pink-400 bg-clip-text text-transparent">
-                OBJEDNEJ HNED!
+            <div className="text-6xl mb-4 animate-pulse opacity-80">📿</div>
+            <h2 className="text-5xl font-black text-slate-200 mb-6 font-serif drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
+              <span className="bg-gradient-to-r from-emerald-400 to-purple-400 bg-clip-text text-transparent">
+                ZÍSKEJTE ARTEFAKT
               </span>
             </h2>
-            <div className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-bold py-3 px-8 rounded-full inline-block text-xl border-4 border-white shadow-2xl animate-pulse">
-              💸 RYCHLÉ VYŘÍZENÍ • DORUČENÍ DO 24H! 💸
+            <div className="bg-gradient-to-r from-purple-900 to-emerald-900 text-emerald-200 font-bold py-3 px-8 rounded-lg inline-block text-xl border border-emerald-400 shadow-2xl shadow-emerald-500/20">
+              🌙 VYPLŇTE SMLOUVU S KOSMICKÝMI MOCNOSTMI 🌙
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="bg-gradient-to-br from-white/95 to-cyan-50/95 rounded-3xl p-8 backdrop-blur-sm border-4 border-white shadow-2xl relative overflow-hidden">
-              {/* Very subtle retro pattern overlay */}
-              <div className="absolute inset-0 opacity-3 bg-[conic-gradient(from_0deg,_theme(colors.pink.400),_theme(colors.yellow.400),_theme(colors.cyan.400),_theme(colors.pink.400))]"></div>
+            <div className="bg-gradient-to-br from-slate-800/95 to-gray-900/95 rounded-2xl p-8 backdrop-blur-sm border border-slate-600 shadow-2xl shadow-black/50 relative overflow-hidden">
+              {/* Subtle cosmic pattern overlay */}
+              <div className="absolute inset-0 opacity-5 bg-[conic-gradient(from_0deg,_theme(colors.emerald.400),_theme(colors.purple.400),_theme(colors.slate.400),_theme(colors.emerald.400))]"></div>
               <div className="grid grid-cols-1 gap-8 relative z-10">
                 <div className="relative">
-                  <label className="block text-lg font-black text-purple-700 mb-3 transform -skew-x-3">
-                    🎯 TVOJE JMÉNO *
-                  </label>
+                  <label className="block text-lg font-bold text-emerald-400 mb-3">🩸 TVOJE JMÉNO *</label>
                   <input
                     type="text"
                     name="customerName"
                     value={formData.customerName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-gradient-to-r from-pink-200 to-purple-200 border-4 border-purple-500 rounded-xl text-black placeholder-purple-600 focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-300 font-bold text-lg"
-                    placeholder="Zadej svoje super jméno!"
+                    className="w-full px-4 py-4 bg-gradient-to-r from-slate-700 to-gray-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 font-medium text-lg"
+                    placeholder="Jméno pro smluvní spojení..."
                   />
                 </div>
 
                 <div className="relative">
-                  <label className="block text-lg font-black text-purple-700 mb-3 transform -skew-x-3">
-                    📧 TVŮJ EMAIL *
-                  </label>
+                  <label className="block text-lg font-bold text-emerald-400 mb-3">📧 SPOJENÍ PRO ARTEFAKT *</label>
                   <input
                     type="email"
                     name="customerEmail"
                     value={formData.customerEmail}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-gradient-to-r from-cyan-200 to-blue-200 border-4 border-cyan-500 rounded-xl text-black placeholder-cyan-700 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-400 transition-all duration-300 font-bold text-lg"
-                    placeholder="tvuj@mega-email.cz"
+                    className="w-full px-4 py-4 bg-gradient-to-r from-slate-700 to-gray-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-300 font-medium text-lg"
+                    placeholder="tvuj@artefakt-spojeni.void"
                   />
                 </div>
 
                 <div className="relative">
-                  <label className="block text-lg font-black text-purple-700 mb-3 transform -skew-x-3">
-                    🎁 VYBRANÝ PRODUKT *
-                  </label>
+                  <label className="block text-lg font-bold text-emerald-400 mb-3">🔮 VYBRANÝ ARTEFAKT *</label>
                   <input
                     type="text"
                     value={selectedProduct}
                     readOnly
-                    className="w-full px-4 py-4 bg-gradient-to-r from-yellow-200 to-orange-200 border-4 border-yellow-500 rounded-xl text-black cursor-not-allowed font-bold text-lg"
-                    placeholder="Vyber si produkt nahoře!"
+                    className="w-full px-4 py-4 bg-gradient-to-r from-gray-800 to-slate-800 border border-gray-600 rounded-lg text-slate-300 cursor-not-allowed font-medium text-lg"
+                    placeholder="Vyberte si artefakt z nabídky..."
                   />
                 </div>
 
                 <div className="relative">
-                  <label className="block text-lg font-black text-purple-700 mb-3 transform -skew-x-3">
-                    💬 PŘEDMĚT ZPRÁVY *
-                  </label>
+                  <label className="block text-lg font-bold text-emerald-400 mb-3">💀 PŘEDMĚT RITUÁLU *</label>
                   <input
                     type="text"
                     name="caseSubject"
                     value={formData.caseSubject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-gradient-to-r from-green-200 to-emerald-200 border-4 border-green-500 rounded-xl text-black placeholder-green-700 focus:outline-none focus:ring-4 focus:ring-purple-400 focus:border-purple-400 transition-all duration-300 font-bold text-lg"
-                    placeholder="Objednávka cosmic produktu!"
+                    className="w-full px-4 py-4 bg-gradient-to-r from-slate-700 to-gray-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-300 font-medium text-lg"
+                    placeholder="Účel temného obřadu..."
                   />
                 </div>
 
                 <div className="relative">
-                  <label className="block text-lg font-black text-purple-700 mb-3 transform -skew-x-3">
-                    📝 TVOJE ZPRÁVA *
-                  </label>
+                  <label className="block text-lg font-bold text-emerald-400 mb-3">📜 ZAKLÍNADLO *</label>
                   <textarea
                     name="caseDescription"
                     value={formData.caseDescription}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-4 bg-gradient-to-r from-pink-200 to-rose-200 border-4 border-pink-500 rounded-xl text-black placeholder-pink-700 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none font-bold text-lg"
-                    placeholder="Napiš nám co chceš a my to vyřídíme!"
+                    className="w-full px-4 py-4 bg-gradient-to-r from-slate-700 to-gray-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-300 resize-none font-medium text-lg"
+                    placeholder="Napište své přání do temnoty..."
                   />
                 </div>
               </div>
@@ -402,23 +456,23 @@ export default function Home() {
               <button
                 type="submit"
                 disabled={!isFormValid || mutation.isPending}
-                className={`w-full mt-8 py-6 px-8 rounded-2xl font-black text-2xl tracking-wide transition-all duration-300 border-4 relative overflow-hidden transform ${
+                className={`w-full mt-8 py-6 px-8 rounded-xl font-bold text-2xl tracking-wide transition-all duration-300 border relative overflow-hidden transform ${
                   isFormValid && !mutation.isPending
-                    ? 'bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 hover:from-pink-500 hover:via-purple-600 hover:to-cyan-500 text-white border-white shadow-2xl hover:shadow-3xl hover:scale-105 animate-pulse'
-                    : 'bg-gray-400 text-gray-600 cursor-not-allowed border-gray-500'
+                    ? 'bg-gradient-to-r from-emerald-800 via-purple-800 to-slate-800 hover:from-purple-800 hover:via-emerald-800 hover:to-gray-800 text-emerald-200 border-emerald-400 shadow-2xl shadow-emerald-500/30 hover:shadow-purple-500/30 hover:scale-105'
+                    : 'bg-gray-700 text-gray-400 cursor-not-allowed border-gray-600'
                 }`}
               >
-                <div className="absolute inset-0 bg-[conic-gradient(from_0deg,_theme(colors.cyan.400),_theme(colors.pink.400),_theme(colors.yellow.400),_theme(colors.cyan.400))] opacity-10"></div>
+                <div className="absolute inset-0 bg-[conic-gradient(from_0deg,_theme(colors.emerald.400/10),_theme(colors.purple.400/10),_theme(colors.slate.400/10),_theme(colors.emerald.400/10))] opacity-30"></div>
                 {mutation.isPending ? (
                   <div className="flex items-center justify-center space-x-4 relative z-10">
-                    <div className="animate-spin rounded-full h-6 w-6 border-4 border-white border-t-transparent"></div>
-                    <span>⚡ ZPRACOVÁVÁ SE... ⚡</span>
+                    <div className="animate-spin rounded-full h-6 w-6 border-2 border-emerald-400 border-t-transparent"></div>
+                    <span>🌀 RITUÁL PROBÍHÁ... 🌀</span>
                   </div>
                 ) : (
                   <div className="flex items-center justify-center space-x-3 relative z-10">
-                    <span>🚀</span>
-                    <span>OBJEDNAT TEEED!</span>
-                    <span>🚀</span>
+                    <span>🌙</span>
+                    <span>ZÍSKAT ARTEFAKT</span>
+                    <span>🌙</span>
                   </div>
                 )}
               </button>
@@ -428,20 +482,19 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="text-center py-16 bg-gradient-to-r from-purple-600/80 to-pink-600/80 border-t-8 border-yellow-400 relative overflow-hidden">
+      <footer className="text-center py-16 bg-gradient-to-r from-black/80 to-slate-900/80 border-t border-emerald-400/30 relative overflow-hidden">
         <div className="space-y-6 relative z-10">
-          <div className="flex justify-center space-x-4 text-4xl">
-            <span className="animate-bounce delay-0">🌟</span>
-            <span className="animate-bounce delay-200">💎</span>
-            <span className="animate-bounce delay-400">🎉</span>
-            <span className="animate-bounce delay-600">🚀</span>
+          <div className="flex justify-center space-x-4 text-4xl opacity-60">
+            <span className="animate-pulse delay-0">👁️</span>
+            <span className="animate-pulse delay-200">🌙</span>
+            <span className="animate-pulse delay-400">⚫</span>
+            <span className="animate-pulse delay-600">🌌</span>
           </div>
-          <p className="text-2xl font-black text-white drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">© 2024 COSMIC DEALS</p>
-          <p className="text-xl font-bold text-yellow-300 animate-pulse">🌈 TAM, KDE SEN POTKÁVÁ REALITU! 🌈</p>
-          <div className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-black py-2 px-6 rounded-full inline-block text-lg border-4 border-white">
-            ⚡ NEJLEPŠÍ CENY • NEJRYCHLEJŠÍ DODÁNÍ • 100% SPOKOJENOST! ⚡
-          </div>
+          <p className="text-2xl font-bold text-slate-300 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+            © 2025 COSMIC DEALS
+          </p>
         </div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_theme(colors.emerald.900/10)_0%,_transparent_70%)] animate-pulse"></div>
       </footer>
     </div>
   );
